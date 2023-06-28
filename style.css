@@ -5,10 +5,17 @@ body {
     padding: 0;
   }
   
+
   .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      padding: 40px;
+    }
   }
   
   /* Page Styles */
@@ -17,26 +24,122 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFF;
+    color: #e9f5db;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shape {
+    position: absolute;
+    background-color: #b5c99a;
+    opacity: 0.5;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  
+  }
+  
+  /* add this rule */
+  .container *:not(.shape) {
+    pointer-events: none;
+  }
+  
+  .shape:hover {
+    opacity: 1;
+  }
+  
+  .shape.circle {
+    width: 200px;
+    height: 300px;
+    border-radius: 25px;
+    top: 65%;
+    left: 80%;
+  }
+
+  
+  .shape.ellipse {
+    width: 150px;
+    height: 100px;
+    border-radius: 25px;
+    top: 63%;
+    left: 5%;
+  }
+  
+  .shape.rounded-rect {
+    width: 400px;
+    height: 100px;
+    border-radius: 25px;
+    top: 85%;
+    left: 15%;
+  }
+  
+  .article-custom {
+    background-color: #e9f5db;
+  }
+  
+  .message-header {
+    background-color: #87986a;
   }
 
   .list-group-item {
     background-color: #D2B48C; /* Dark beige color */
     color: #FFF; /* Text color */
   }
-  #home {
-    background-color: #607D8B;
-    height: 100vh; /* Added to match the page height */
+
+  .image-container {
+    position: relative;
+    display: inline-block;
   }
   
+  .image-container::after {
+    content: "";
+    position: absolute;
+    top: 10px; /* Adjust the distance from the top */
+    left: -10px; /* Adjust the distance from the left */
+    width: calc(100% + 20px); /* Adjust the width to include the shadow offset */
+    height: calc(100% + 20px); /* Adjust the height to include the shadow offset */
+    background-color: #eee; /* Light gray color */
+    border-radius: 8px; /* Adjust the border radius */
+    filter: blur(10px); /* Adjust the shadow blur */
+    opacity: 0.6; /* Adjust the shadow opacity */
+    z-index: -1; /* Move the shadow behind the image */
+  }
+  
+  .image-container img {
+    display: block;
+    border-radius: 8px; /* Adjust the border radius */
+  }
+  
+  #home {
+    position: relative;
+    height: 100vh;
+    background-color: #cfe1b9;/*#607D8B;*/
+  }
+  
+  .particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 66.666%;
+  }
+  
+  .hero-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88.333%;
+  }
+ 
+  
   #work-experience {
-    background-color: #afa791;
-    height: 150vh; /* Added to match the page height */
+    background-color: #b5c99a;
+    height: auto;
+    /* Added to match the page height#afa791 */
   }
   
   #about-me {
-    background-color: #476a8b;
-    height: 100vh; /* Added to match the page height */
+    background-color: #97a97c;
+    height: auto; /* Added to match the page height #476a8b*/
   }
   
   /* Typography */
@@ -51,22 +154,33 @@ body {
  /* Adjust the color of regular text */
   }
   
-  /* Profile Picture */
+  /* Profile Picture 
   img {
     width: 200px;
     border-radius: 50%;
-  }
+  }*/
 
   .icon {
     width: 30px;
     height: 30px;
     display: inline-block;
     margin-right: 10px;
+    margin-left: 10px;
     object-fit: cover;
+    color:#87986a
   }
   
   
+  .no-bullets li {
+    list-style: none;
+  }
+  
+  .no-bullets ul {
+    padding-left: 0;
+  }
+  
  
+
 
 /* ---- base ---- */
 
