@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    #question {
+      font-size: 24px;
+      margin-top: 50px;
+    }
+
+    .options {
+      margin-top: 30px;
+    }
+
+    .option {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #f1f1f1;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background-color: #ddd;
+    }
+
+    #result {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Trivia Game</h1>
+  <div id="question"></div>
+  <div class="options">
+    <button class="option"></button>
+    <button class="option"></button>
+    <button class="option"></button>
+    <button class="option"></button>
+  </div>
+  <div id="result"></div>
+
+  <script>
+    var questions = [
+  {
+    question: "What is the name of the largest known dinosaur?",
+    options: ["Tyrannosaurus rex", "Brachiosaurus", "Spinosaurus", "Argentinosaurus"],
+    answer: "Argentinosaurus"
+  },
+  {
+    question: "Which dinosaur is known for its unique head crest?",
+    options: ["Stegosaurus", "Triceratops", "Ankylosaurus", "Pachycephalosaurus"],
+    answer: "Pachycephalosaurus"
+  },
+  {
+    question: "Which dinosaur had the longest neck?",
+    options: ["Brachiosaurus", "Diplodocus", "Apatosaurus", "Mamenchisaurus"],
+    answer: "Mamenchisaurus"
+  },
+  {
+    question: "Which dinosaur is believed to have had feathers?",
+    options: ["Tyrannosaurus rex", "Velociraptor", "Stegosaurus", "Allosaurus"],
+    answer: "Velociraptor"
+  },
+  {
+    question: "What is the name of the fastest dinosaur?",
+    options: ["Gallimimus", "Deinonychus", "Velociraptor", "Carnotaurus"],
+    answer: "Gallimimus"
+  },
+  {
+    question: "Which dinosaur is known as the 'king of the tyrant lizards'?",
+    options: ["Tyrannosaurus rex", "Allosaurus", "Carnotaurus", "Giganotosaurus"],
+    answer: "Tyrannosaurus rex"
+  },
+  {
+    question: "What is the name of the smallest known dinosaur?",
+    options: ["Microraptor", "Compsognathus", "Dromaeosaurus", "Oviraptor"],
+    answer: "Compsognathus"
+  },
+  {
+    question: "Which dinosaur is famous for its long, sharp claws?",
+    options: ["Utahraptor", "Baryonyx", "Deinonychus", "Therizinosaurus"],
+    answer: "Deinonychus"
+  },
+  {
+    question: "What is the name of the dinosaur with a bony club at the end of its tail?",
+    options: ["Ankylosaurus", "Stegosaurus", "Carnotaurus", "Triceratops"],
+    answer: "Ankylosaurus"
+  },
+  {
+    question: "Which dinosaur is known for its three horns?",
+    options: ["Triceratops", "Styracosaurus", "Centrosaurus", "Pachyrhinosaurus"],
+    answer: "Triceratops"
+  },
+  {
+    question: "What is the name of the dinosaur that could swim and catch fish?",
+    options: ["Spinosaurus", "Baryonyx", "Suchomimus", "Megalosaurus"],
+    answer: "Baryonyx"
+  },
+  {
+    question: "Which dinosaur had a sail-like fin on its back?",
+    options: ["Dimetrodon", "Iguanodon", "Carnotaurus", "Ouranosaurus"],
+    answer: "Dimetrodon"
+  },
+  {
+    question: "What is the name of the dinosaur that could fly?",
+    options: ["Pteranodon", "Archaeopteryx", "Quetzalcoatlus", "Microraptor"],
+    answer: "Pteranodon"
+  },
+  {
+    question: "Which dinosaur is known for its long, curved horns on its head?",
+    options: ["Corythosaurus", "Parasaurolophus", "Styracosaurus", "Einiosaurus"],
+    answer: "Styracosaurus"
+  },
+  {
+    question: "What is the name of the dinosaur with a bony frill and spikes along its back?",
+    options: ["Stegosaurus", "Kentrosaurus", "Polacanthus", "Edmontonia"],
+    answer: "Stegosaurus"
+  },
+  {
+    question: "Which dinosaur is known for its large thumb claw?",
+    options: ["Deinonychus", "Therizinosaurus", "Velociraptor", "Baryonyx"],
+    answer: "Therizinosaurus"
+  },
+  {
+    question: "What is the name of the dinosaur that is considered the largest carnivorous dinosaur?",
+    options: ["Spinosaurus", "Giganotosaurus", "Tyrannosaurus rex", "Carcharodontosaurus"],
+    answer: "Spinosaurus"
+  },
+  {
+    question: "Which dinosaur had a bony frill with holes on the sides of its head?",
+    options: ["Triceratops", "Pachycephalosaurus", "Einiosaurus", "Centrosaurus"],
+    answer: "Triceratops"
+  },
+  {
+    question: "What is the name of the dinosaur with a long, narrow snout and rows of sharp teeth?",
+    options: ["Albertosaurus", "Megalosaurus", "Acrocanthosaurus", "Carcharodontosaurus"],
+    answer: "Carcharodontosaurus"
+  },
+  {
+    question: "Which dinosaur is believed to be the ancestor of birds?",
+    options: ["Velociraptor", "Archaeopteryx", "Oviraptor", "Sinosauropteryx"],
+    answer: "Archaeopteryx"
+  },
+  {
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Berlin", "Madrid"],
+    answer: "Paris"
+  },
+  {
+    question: "Which planet is known as the Red Planet?",
+    options: ["Venus", "Mars", "Jupiter", "Saturn"],
+    answer: "Mars"
+  },
+  {
+    question: "Who painted the Mona Lisa?",
+    options: ["Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci", "Michelangelo"],
+    answer: "Leonardo da Vinci"
+  },
+  {
+    question: "Which country won the 2018 FIFA World Cup?",
+    options: ["Brazil", "Germany", "France", "Spain"],
+    answer: "France"
+  },
+  {
+    question: "What is the largest ocean on Earth?",
+    options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+    answer: "Pacific Ocean"
+  },
+  {
+    question: "Who wrote the Book of Revelation?",
+    options: ["John", "Paul", "Moses", "Daniel"],
+    answer: "John"
+  },
+  {
+    question: "Which apostle was known as the 'doubting Thomas'?",
+    options: ["Thomas", "Peter", "John", "Matthew"],
+    answer: "Thomas"
+  },
+  {
+    question: "Which book in the Bible is known as the 'Song of Solomon'?",
+    options: ["Song of Solomon", "Proverbs", "Ecclesiastes", "Psalms"],
+    answer: "Song of Solomon"
+  },
+  {
+    question: "Who was the first king of Israel?",
+    options: ["Saul", "David", "Solomon", "Samuel"],
+    answer: "Saul"
+  },
+  {
+    question: "In the Bible, who was the mother of Samuel?",
+    options: ["Hannah", "Sarah", "Rebecca", "Rachel"],
+    answer: "Hannah"
+  },
+  {
+    question: "Which disciple of Jesus was a tax collector before becoming a follower?",
+    options: ["Matthew", "John", "James", "Andrew"],
+    answer: "Matthew"
+  },
+  {
+    question: "Which prophet was known for being swallowed by a big fish?",
+    options: ["Jonah", "Elijah", "Isaiah", "Jeremiah"],
+    answer: "Jonah"
+  },
+  {
+    question: "Who was the father of King Solomon?",
+    options: ["David", "Solomon", "Saul", "Jesse"],
+    answer: "David"
+  },
+  {
+    question: "In the Book of Exodus, what was the last plague that God sent upon Egypt?",
+    options: ["Death of the firstborn", "Frogs", "Hail", "Locusts"],
+    answer: "Death of the firstborn"
+  },
+  {
+    question: "Which disciple denied Jesus three times before the rooster crowed?",
+    options: ["Peter", "James", "John", "Andrew"],
+    answer: "Peter"
+  },
+  {
+    question: "Who was the first high priest of Israel?",
+    options: ["Aaron", "Moses", "Samuel", "Eli"],
+    answer: "Aaron"
+  },
+  {
+    question: "Which apostle wrote the most books in the New Testament?",
+    options: ["Paul", "Peter", "John", "James"],
+    answer: "Paul"
+  },
+  {
+    question: "Which prophet was taken up to heaven in a chariot of fire?",
+    options: ["Elijah", "Isaiah", "Jeremiah", "Ezekiel"],
+    answer: "Elijah"
+  },
+  {
+    question: "Who was the wife of Abraham?",
+    options: ["Sarah", "Rebecca", "Rachel", "Leah"],
+    answer: "Sarah"
+  },
+  {
+    question: "Which book of the Bible contains the story of David and Goliath?",
+    options: ["1 Samuel", "2 Samuel", "1 Kings", "2 Kings"],
+    answer: "1 Samuel"
+  },
+  {
+    question: "Who was the brother of Moses?",
+    options: ["Aaron", "Joshua", "Elijah", "Samuel"],
+    answer: "Aaron"
+  },
+  {
+    question: "What was the name of the city where Jesus was born?",
+    options: ["Bethlehem", "Jerusalem", "Nazareth", "Capernaum"],
+    answer: "Bethlehem"
+  },
+  {
+    question: "Which book of the Bible contains the Ten Commandments?",
+    options: ["Exodus", "Leviticus", "Numbers", "Deuteronomy"],
+    answer: "Exodus"
+  },
+  {
+    question: "Who wrote most of the Psalms in the Bible?",
+    options: ["David", "Solomon", "Moses", "Asaph"],
+    answer: "David"
+  },
+  {
+    question: "In the Book of Genesis, who built an ark to survive the great flood?",
+    options: ["Noah", "Abraham", "Moses", "Jacob"],
+    answer: "Noah"
+  },
+  {
+    question: "In Harry Potter, what is the name of the train that takes students to Hogwarts School of Witchcraft and Wizardry?",
+    options: ["Hogwarts Express", "Knight Bus", "Thestral", "Nimbus 2000"],
+    answer: "Hogwarts Express"
+  },
+  {
+    question: "Who is the author of the Percy Jackson series?",
+    options: ["J.K. Rowling", "Rick Riordan", "Stan Lee", "J.R.R. Tolkien"],
+    answer: "Rick Riordan"
+  },
+  {
+    question: "In Marvel Comics, what is the real name of Iron Man?",
+    options: ["Tony Stark", "Steve Rogers", "Peter Parker", "Bruce Banner"],
+    answer: "Tony Stark"
+  },
+  {
+    question: "What is the name of Harry Potter's owl?",
+    options: ["Hedwig", "Crookshanks", "Fawkes", "Scabbers"],
+    answer: "Hedwig"
+  },
+  {
+    question: "Who is the main villain in the Percy Jackson series?",
+    options: ["Kronos", "Luke Castellan", "Hades", "Ares"],
+    answer: "Kronos"
+  },
+  {
+    question: "In Marvel Comics, what is the alter ego of Spider-Man?",
+    options: ["Peter Parker", "Bruce Wayne", "Clark Kent", "Wade Wilson"],
+    answer: "Peter Parker"
+  },
+  {
+    question: "What is the name of the tournament in Harry Potter and the Goblet of Fire?",
+    options: ["Triwizard Tournament", "Quidditch World Cup", "Yule Ball", "Slug Club"],
+    answer: "Triwizard Tournament"
+  },
+  {
+    question: "Who is the god of thunder in Norse mythology?",
+    options: ["Thor", "Zeus", "Poseidon", "Hades"],
+    answer: "Thor"
+  },
+  {
+    question: "In Marvel Comics, what is the real name of Captain America?",
+    options: ["Steve Rogers", "Tony Stark", "Bruce Banner", "Clint Barton"],
+    answer: "Steve Rogers"
+  },
+  {
+    question: "What is the name of Percy Jackson's sword?",
+    options: ["Riptide", "Anaklusmos", "Mjolnir", "Excalibur"],
+    answer: "Riptide"
+  },
+  {
+    question: "In Harry Potter, what creature guards the entrance to the Chamber of Secrets?",
+    options: ["Basilisk", "Dragon", "Hippogriff", "Phoenix"],
+    answer: "Basilisk"
+  },
+  {
+    question: "Who is the father of Percy Jackson?",
+    options: ["Poseidon", "Zeus", "Hades", "Apollo"],
+    answer: "Poseidon"
+  },
+  {
+    question: "In Marvel Comics, what is the real name of Wolverine?",
+    options: ["Logan", "Scott Summers", "Bruce Banner", "Matt Murdock"],
+    answer: "Logan"
+  },
+  {
+    question: "What is the name of the school that Harry Potter attends?",
+    options: ["Hogwarts School of Witchcraft and Wizardry", "Ilvermorny School of Witchcraft and Wizardry", "Beauxbatons Academy of Magic", "Durmstrang Institute"],
+    answer: "Hogwarts School of Witchcraft and Wizardry"
+  },
+  {
+    question: "Who is the main antagonist in the Percy Jackson and the Olympians series?",
+    options: ["Kronos", "Luke Castellan", "Ares", "Hades"],
+    answer: "Kronos"
+  },
+  {
+    question: "In Marvel Comics, what is the real name of Black Widow?",
+    options: ["Natasha Romanoff", "Wanda Maximoff", "Carol Danvers", "Hope Van Dyne"],
+    answer: "Natasha Romanoff"
+  },
+  {
+    question: "What is the name of the group of magical creatures in Harry Potter that are invisible to anyone who has not seen their eyes?",
+    options: ["Thestrals", "Blast-Ended Skrewts", "Nifflers", "Bowtruckles"],
+    answer: "Thestrals"
+  },
+  {
+    question: "Who is the author of the Harry Potter series?",
+    options: ["J.K. Rowling", "Rick Riordan", "Suzanne Collins", "Stephanie Meyer"],
+    answer: "J.K. Rowling"
+  },
+  {
+    question: "In Percy Jackson, what is the name of the camp for demigods?",
+    options: ["Camp Half-Blood", "Camp Jupiter", "Camp Valhalla", "Camp Asgard"],
+    answer: "Camp Half-Blood"
+  },
+  {
+    question: "In Marvel Comics, what is the real name of Thor's hammer?",
+    options: ["Mjolnir", "Stormbreaker", "Gungnir", "Vibranium"],
+    answer: "Mjolnir"
+  },
+  // Additional questions
+  {
+    question: "Which city hosted the 2016 Summer Olympics?",
+    options: ["Rio de Janeiro", "London", "Beijing", "Athens"],
+    answer: "Rio de Janeiro"
+  },
+  {
+    question: "Who wrote the famous novel 'Pride and Prejudice'?",
+    options: ["Jane Austen", "Charlotte Brontë", "Emily Dickinson", "Virginia Woolf"],
+    answer: "Jane Austen"
+  },
+  {
+    question: "What is the largest land mammal?",
+    options: ["Elephant", "Giraffe", "Rhinoceros", "Hippopotamus"],
+    answer: "Elephant"
+  },
+  {
+    question: "Which band is known for the hit song 'Bohemian Rhapsody'?",
+    options: ["The Beatles", "Queen", "Led Zeppelin", "Rolling Stones"],
+    answer: "Queen"
+  },
+  {
+    question: "Who is the founder of Microsoft?",
+    options: ["Steve Jobs", "Bill Gates", "Jeff Bezos", "Mark Zuckerberg"],
+    answer: "Bill Gates"
+  },
+  {
+    question: "Which country is known for inventing pizza?",
+    options: ["Italy", "Greece", "United States", "France"],
+    answer: "Italy"
+  },
+  {
+    question: "What is the tallest mountain in the world?",
+    options: ["Mount Kilimanjaro", "Mount Everest", "Mount McKinley", "Mount Fuji"],
+    answer: "Mount Everest"
+  },
+  {
+    question: "Who is the author of the Harry Potter book series?",
+    options: ["J.K. Rowling", "Stephen King", "George R.R. Martin", "Dan Brown"],
+    answer: "J.K. Rowling"
+  },
+  {
+    question: "What is the largest animal on Earth?",
+    options: ["Blue Whale", "Giraffe", "Elephant", "Dinosaur"],
+    answer: "Blue Whale"
+  },
+  {
+    question: "Which country is known as the 'Land of the Rising Sun'?",
+    options: ["China", "Japan", "South Korea", "Vietnam"],
+    answer: "Japan"
+  },
+  {
+    question: "Who is the famous scientist known for the theory of relativity?",
+    options: ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
+    answer: "Albert Einstein"
+  },
+  {
+    question: "Which city is the capital of Australia?",
+    options: ["Sydney", "Melbourne", "Canberra", "Perth"],
+    answer: "Canberra"
+  },
+  {
+    question: "Who is the lead vocalist of the band Coldplay?",
+    options: ["Chris Martin", "Bono", "Thom Yorke", "Brandon Flowers"],
+    answer: "Chris Martin"
+  },
+  {
+    question: "Which country is famous for its tulip fields?",
+    options: ["Netherlands", "France", "Italy", "Germany"],
+    answer: "Netherlands"
+  },
+  {
+    question: "Who painted the famous artwork 'The Starry Night'?",
+    options: ["Salvador Dalí", "Vincent van Gogh", "Pablo Picasso", "Claude Monet"],
+    answer: "Vincent van Gogh"
+  },
+  {
+    question: "What is the currency of Japan?",
+    options: ["Yuan", "Euro", "Pound", "Yen"],
+    answer: "Yen"
+  },
+  {
+    question: "Which element has the chemical symbol 'Fe'?",
+    options: ["Iron", "Silver", "Gold", "Copper"],
+    answer: "Iron"
+  },
+  {
+    question: "Who directed the movie 'Inception'?",
+    options: ["Christopher Nolan", "Steven Spielberg", "Martin Scorsese", "Quentin Tarantino"],
+    answer: "Christopher Nolan"
+  },
+  {
+    question: "Which planet is known as the 'Morning Star' or 'Evening Star'?",
+    options: ["Venus", "Mercury", "Mars", "Saturn"],
+    answer: "Venus"
+  },
+  {
+    question: "Who is the author of the novel 'To Kill a Mockingbird'?",
+    options: ["F. Scott Fitzgerald", "Harper Lee", "George Orwell", "J.R.R. Tolkien"],
+    answer: "Harper Lee"
+  },
+  {
+    question: "Which country is famous for the Great Wall?",
+    options: ["China", "India", "United States", "Brazil"],
+    answer: "China"
+  },
+  {
+    question: "Who is the lead singer of the band U2?",
+    options: ["Bono", "Mick Jagger", "Freddie Mercury", "Bruce Springsteen"],
+    answer: "Bono"
+  },
+  {
+    question: "What is the chemical symbol for gold?",
+    options: ["Go", "Ag", "Au", "Ge"],
+    answer: "Au"
+  },
+  {
+    question: "Which country is famous for its pyramids?",
+    options: ["Egypt", "Greece", "Italy", "Mexico"],
+    answer: "Egypt"
+  },
+  {
+    question: "Who is the author of the novel '1984'?",
+    options: ["George Orwell", "Ernest Hemingway", "Jane Austen", "William Shakespeare"],
+    answer: "George Orwell"
+  }
+];
+
+var currentQuestionIndex = 0;
+var score = 0;
+
+var questionElement = document.getElementById("question");
+var optionsElements = document.getElementsByClassName("option");
+var resultElement = document.getElementById("result");
+
+// Get 5 random questions
+var randomQuestions = getRandomQuestions(5);
+
+function checkAnswer(selectedOption) {
+  var currentQuestion = randomQuestions[currentQuestionIndex];
+  if (selectedOption === currentQuestion.answer) {
+    score++;
+    resultElement.textContent = "Correct!";
+  } else {
+    resultElement.textContent = "Wrong!";
+  }
+
+  currentQuestionIndex++;
+  if (currentQuestionIndex < randomQuestions.length) {
+    displayQuestion();
+  } else {
+    displayResult();
+  }
+}
+
+function displayResult() {
+  questionElement.textContent = "Quiz Complete";
+  for (var i = 0; i < optionsElements.length; i++) {
+    optionsElements[i].style.display = "none";
+  }
+  resultElement.textContent = "Your Score: " + score + "/" + randomQuestions.length;
+}
+
+// Event listeners for options
+for (var i = 0; i < optionsElements.length; i++) {
+  optionsElements[i].addEventListener("click", function () {
+    checkAnswer(this.textContent);
+  });
+}
+
+// Initial question display
+displayQuestion();
+
+function displayQuestion() {
+  var currentQuestion = randomQuestions[currentQuestionIndex];
+  questionElement.textContent = currentQuestion.question;
+  for (var i = 0; i < optionsElements.length; i++) {
+    optionsElements[i].textContent = currentQuestion.options[i];
+  }
+}
+
+// Helper function to get random questions
+function getRandomQuestions(num) {
+  var shuffledQuestions = questions.sort(() => Math.random() - 0.5); // Shuffle the questions array
+  return shuffledQuestions.slice(0, num); // Get the first 'num' questions
+}
+
+  </script>
+</body>
+
+</html>

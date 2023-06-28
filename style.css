@@ -1,0 +1,126 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  /* Page Styles */
+  .page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+  }
+
+  .list-group-item {
+    background-color: #D2B48C; /* Dark beige color */
+    color: #FFF; /* Text color */
+  }
+  #home {
+    background-color: #607D8B;
+    height: 100vh; /* Added to match the page height */
+  }
+  
+  #work-experience {
+    background-color: #afa791;
+    height: 150vh; /* Added to match the page height */
+  }
+  
+  #about-me {
+    background-color: #476a8b;
+    height: 100vh; /* Added to match the page height */
+  }
+  
+  /* Typography */
+  h1, h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+ /* Adjust the color of regular text */
+  }
+  
+  /* Profile Picture */
+  img {
+    width: 200px;
+    border-radius: 50%;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+  
+  
+ 
+
+/* ---- base ---- */
+
+html{ 
+	width:100%;
+	height:100%;
+	background:#111;
+}
+
+html{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+canvas{
+  display:block;
+  vertical-align:bottom;
+}
+
+
+/* ---- stats.js ---- */
+
+.count-particles{
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13E8E9;
+  font-size: .8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles{
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles{
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#stats{
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles{
+  border-radius: 0 0 3px 3px;
+}
