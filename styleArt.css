@@ -417,6 +417,10 @@ main.main{
     
 }
 
+.portfolio-card__link {
+  color: white;
+}
+
 .sport{
     background: linear-gradient( #b5c99a, #b5c99a ), url('../img/sport.jpg') no-repeat;
     background-size: cover;
