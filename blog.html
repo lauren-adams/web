@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #cfe1b9;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .article-card {
+      margin-bottom: 20px;
+    }
+    
+    .article-card:hover {
+      cursor: pointer;
+    }
+    
+    /* Dummy Articles */
+    .article-card:nth-child(3n+1) {
+      background-color: #97a97c;
+    }
+    
+    .article-card:nth-child(3n+2) {
+      background-color: #87986a;
+    }
+    
+    .article-card:nth-child(3n) {
+      background-color: #718355;
+    }
+
+
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="index.html" class="nav__logo">
+                    <img src="greenlogo.png" width="50px" height="50px" alt="Logo" class="logo-image">
+                  </a>
+                  
+            </div>
+
+        
+            <div class="nav__toggle" id="nav-toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </nav>
+    </header>
+  <div class="container">
+    <header class="mt-4 mb-4">
+      <h1 class="text-center">Welcome to My Blog</h1>
+    </header>
+    
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="list-group" id="article-list">
+          <a href="#article1" class="list-group-item list-group-item-action custom-multi-color">Heist Movies Steal My Heart</a>
+          <a href="#article2" class="list-group-item list-group-item-action custom-multi-color">Disney, Please Stop</a>
+          <a href="#article3" class="list-group-item list-group-item-action custom-multi-color">Estonia Adventures</a>
+        </div>
+      </div>
+      
+      <div class="col-lg-8">
+        <div class="card d-none" id="article1">
+          <div class="card-body">
+            <h2 class="card-title custom-green">Heist Movies Steal My Heart</h2>
+            <p class="card-text">
+                I love heist movies; they are a wonderful and severely underrated form of cinema. I think cinema as a whole would be better if more movies were heists. I will now rank films on a scale of 1 - 10 for their heistness:
+            </p>
+            
+            <ol>
+                <li>
+                    <strong>Harry Potter and the Sorcerer's Stone:</strong> 4.1243
+                    <p>
+                        This film is not a heist and therefore cannot be rated particularly highly. But there is an attempted heist to get the Sorcerer's Stone. Because of this and the multiple levels of security needed to get the stone, it will receive a ranking higher than 3. Unfortunately, the stone was in his pocket the whole time, so nothing was heisted, leaving the film at a 4.1243.
+                    </p>
+                </li>
+                <li>
+                    <strong>Ocean's Eleven:</strong> 9.635
+                    <p>
+                        Wonderful film. So much heist. Such a classic. The whole film is centered around a heist while still being fun, and the heist is significantly complete and wonderful.
+                    </p>
+                </li>
+                <li>
+                    <strong>National Treasure:</strong> 5
+                    <p>
+                        The Declaration of Independence was stolen, and that was great. Unfortunately, it only went downhill after that. Little else was heisted, more of just a historical smash and grab, leaving us at a 5.
+                    </p>
+                </li>
+                <li>
+                    <strong>Star Wars: A New Hope:</strong> 2.0001
+                    <p>
+                        This film is utterly lacking in heist. At best, they heisted Leia out of space jail, but that is not so much of a heist rather than a prison break, so a solid 2.0001.
+                    </p>
+                </li>
+                <li>
+                    <strong>Ant-Man:</strong> 8
+                    <p>
+                        This film was a masterpiece. A wonderful fusion of the genres of superhero and heist and proof that superhero films can be more than just CGI fight scenes. Truly one of a kind, it should have paved the way for more super-heists, but alas Marvel disappointed. Also, Paul Rudd is just wonderful.
+                    </p>
+                </li>
+                <li>
+                    <strong>Ant-Man and the Wasp:</strong> 0.9
+                    <p>
+                        This film was a true disappointment. Going into the theater, all I wanted was a good heist, but all I received was disappointment. It receives almost a point for almost heisting a thing out of a quantum place, but there was no planning or security or heist. This is a pity point, out of respect for Paul Rudd.
+                    </p>
+                </li>
+                <li>
+                    <strong>The Lord of the Rings/The Hobbit:</strong> 6.789
+                    <p>
+                        I have not seen this franchise fully, but I do know a ring gets stolen in various capacities which really feels like the makings of a heist. For these reasons, I am giving it a hopeful 6.789 but may need to adjust this later in life.
+                    </p>
+                </li>
+                <li>
+                    <strong>Aladdin:</strong> 3
+                    <p>
+                        This film could have been a wonderful heist as the main character is a thief. He does successfully steal the lamp, so he gets a 3, but it is simply too much of a theft rather than a heist. So, I cannot in good conscience give it any higher rating.
+                    </p>
+                </li>
+                <li>
+                    <strong>The Wizard of Oz:</strong> 2.2222
+                    <p>
+                        This film is not particularly heisty, although it does have elements of assembling a team to break into a building, and Dorothy does steal some shoes off a witch's corpse, demonstrating her capacity to commit acts of theft. But once again, this is simply more petty crime than heist.
+                    </p>
+                </li>
+                <li>
+                    <strong>Now You See Me:</strong> 10
+                    <p>
+                        This film combines the elements of magic with heist to make a wonderful combination. The specialized heisters have unique skills not utilized in other heist films. I feel the magic/theft elements and well-orchestrated heists elevate this film beyond just a classic heist and into the 10 ranking.
+                    </p>
+                </li>
+            </ol>
+            
+            </p>
+          </div>
+        </div>
+        
+        <div class="card d-none" id="article2">
+          <div class="card-body">
+            <h2 class="card-title custom-green">Disney, Please Stop</h2>
+            <p class="card-text">The Disney Channel franchise has held tight to the hearts of children and families for the past 100 years. With a lineup of iconic princess stories, world-class theme parks, and animation that paved the way to modern cinema, they continued to buy up any franchise that could threaten their empire, including Pixar, Marvel, Star Wars, and even National Geographic. With all of this going for them, why have they consistently disappointed fans?</p>
+
+            <p>I believe the heart of this problem is the live-action remake. They provide a safe opportunity for studios to re-release a character for the younger generation and provide an easy cash grab. But they don't add anything. Maleficent was a great film that was cool and told a new story from an existing framework. But Cinderella, Belle, Aladdin, and Mulan all proved to be forgettable and controversial films.</p>
+            
+            <p>I wouldn't spend money to go and see an autotuned animation-heavy shot-for-shot remake of a story I have already seen. Furthermore, some scenes don't need realism. We don't need emotionless CGI lions recreating The Lion King or a terrifying CGI Flounder. Animation has charm and magic and is stylistic and beautiful. Just because we can doesn't mean we should.</p>
+            
+            <p>Also, we need to address the political controversy of finding live-action actors to replace beloved animated characters. No live-action casting has been without controversy, from Ariel to even Nani for the live-action Lilo and Stitch. It appears no actor can make the public happy. It is either an actor that is not the correct ethnicity or is the correct ethnicity but does not look like the character or is swapping the race of a character in a way that does not add anything to the plot. All of this controversy just feels frustrating and toxic for the poor actors who are put in these environments. These actors don't need to have to live up to an unreasonable fanbase when Disney could just create new content.</p>
+            
+            <p>Don't randomly race-swap a character; write authentic and diverse stories that fit that character. New films like Encanto, Coco, and The Wish show that Disney can captivate audiences with beautiful and diverse new stories rather than just regurgitating already beloved stories.</p>
+            
+            <p>Yes, it is more of a gamble to release original stories, and they might bomb, but Disney has a ton of money that could be funneled into new films and animation rather than remakes. And there are so many wonderful fairy tales and folktales that could be turned into wonderful films that could captivate the next generations. Films like Frozen, Moana, Inside Out, and Zootopia were all loved because they were different and wonderful. There might be some bombs like Strange World or Turning Red, but at least they tried. It is better to try and fail than not try at all. Anyway, that is my brain dump. Be better, Disney. Thanks!</p>
+            </div>
+        </div>
+        
+        <div class="card d-none" id="article3">
+          <div class="card-body">
+            <h2 class="card-title custom-green">Estonia Adventures</h2>
+            <p class="card-text"> I didn't expect to become a travel blogger this summer, but I really need to finish this blog page, and I have not slept since I was in Estonia, and everyone is telling me to write things down so I remember it, so these are my thoughts:</p>
+
+            <p>
+                All the adults were hyping up Estonia, so I knew it would be cool for a country I had never thought about, but wow was it amazing. We trained for like eight hours and booked it across the city on a tram because I definitely did not give us enough time... But we docked around 9:30, and Rachel's dance friend Mia met us there. 
+                Mia was literally such an incredible tour guide and person. She moved from Houston to Estonia three years ago all by herself to be a professional ballerina in the Estonia Ballet Company. And both her and Rachel are just like elegent and graceful and wonderful. But she was so kind and hospitable and took us to her favorite restaurants and pointed out fun facts while we walked and constantly checked in on how we were doing. And being around them gave such a cool glimpse into the life of professional ballet dancers, which is just so fascinating and challenging and a unique perspective.
+            </p>
+            
+            <p>
+                We got brunch in the city, and I had wonderful porridge with lingonberries (I love porridge; it is filling, cheap, and wonderful) and a cute little latte. And then we explored Old Town. Estonia is like a magical princess castle land. 
+                Beautiful Renaissance architecture with big stone walls and orange towers. It just looks straight out of a storybook. All of the buildings were just so interesting and historical; I swear I could wander around Old Town for days. There was also a Renaissance fair going on, so the streets were filled with old-timey salespeople. And there were so many people with, like, the tiniest little rat dogs. Like they could be carried away by a seagull. Such a city of tiny dogs. Also, the flowers! There were walls of flower stands approaching the market, and all the restaurants had beautiful blooming flowers in the window boxes; it was wonderful.
+            </p>
+            
+            <p>
+                The views were incredible, and we visited an Orthodox church. There was such a cool fusion between medieval and Russian architecture. There was also a lot of support for Ukraine in banners and protest signs outside the Russian embassy. Estonia was liberated around 100 years ago, so that threat is very real to them. 
+                Anyways, the church was just so brightly colored, and there was a ceremony going on inside, so it was completely silent.
+            </p>
+            
+            <p>
+                We explored a little more and then went to Mia's apartment to drop off bags, which was a blessing to not carry all my possessions or to dump my belongings in a sketchy locker. We walked to a super cool food court where I grabbed Boba and a Kazakhstani cabbage pastry, and then the fire alarm went off, so we just explored. We saw some beautiful hand-sewn dresses, video game stores, zero waste stores. Doubled back to the market, and I grabbed a fridge magnet. I decided I'm a fridge magnet girl. I like souvenirs, but I don't believe in junk, but magnets are like 2 bucks, have a purpose, easy to display, and are fun to collect. 
+                We also went to a bookstore in a cute little mall, and we browsed the cool European covers of classic books, and I contemplated buying Moomin merch. I just love him. I will get merch. I am just cheap. I think I will get a mug eventually.
+            </p>
+            
+            <p>
+                Then we went back home, dropped off junk, ate cinnamon rolls, chatted, charged up phones. Then headed out to a place. It was like the ruins of an important building of some sort, but it looked like the stage for a really cool dystopian fight scene, with cool graffiti over architecture. We walked upstairs and then just sat on the cement ledge and watched the sunset and just talked for like an hour. It was such a pretty view of the ocean, and Old Town and the city, and there was a salty breeze from the sea! My heart just felt full. Then we booked it to the restaurant, and we got burgers on Estonian rye bread buns (literally so good) and lemonade with a bitter orange fruit paste in it. I don't know, it tasted like Finnish Kelpkap. And had a delirious tram/walk back across the city to crash around 1 am. It almost felt like real nighttime. Kinda crazy. A little scary, I forgot night on the streets is not a great time...
+            </p>
+            
+            <p>
+                DAY 2!! We're close, guys. We slept in, which was also fantastic to be well-rested for once on a weekend (also did little temporary tattoos because why not?). And we went to a little pancake cafe that was so incredible, like fat ricotta-covered blueberry bacon pancakes. And thick-sliced avocado toast with roasted tomatoes, ricotta, fluffy eggs, and everything bagel seasoning! Those dishes looked like art. Every meal in Estonia was literally so good.
+                
+                <p>Then we went to a cute summer palace turned art museum. So brightly covered, eachroom in the house was painted in such a bright, vivid shade. And the ballroom was incredible. Like, you just walk in and are in awe. So detailed and wonderful. It makes you want to rewind to the 18th century and dance in a fabulous ball. Maybe social dance next semester... But the art was beautiful and from various collections around Europe. </p>
+            I got to take more pictures where my face looks like old portraits, which is lovely. Then we wandered the gardens. Serious Alice in Wonderland vibes; I literally just want to wander the little labyrinths. Visited the Estonian president's pink little villa. The flag was up, and guards were out, so I think he was inside somewhere. Walked through a courtyard symbolizing Dante's Inferno. Then had way too much fun in a rose garden. Literally so many roses, all in bloom and in so many different shades. They smelled incredible and were so lush. Such vibrant and well-designed gardens; we loved it. Stopped at Mia's favorite cafe, and I got myself an Estonian honey cake, tried some marzipan, and sat for a while on the second floor of the cafe. It was just quiet and lovely. Waited out some showers. Checked out a sunken ship monument. Touched the ocean. Swung on some swings. After that, we grabbed our stuff, had one last wander through Old Town, and booked it to the ferry.
+            <p>We were pretty dead on the way home; my book is weird, so I spent a while on Instagram Reels. On the train ride home, we got in trouble for not having Finnish student cards, so that stunk. Also, the man across from me kept putting his bare feet on my chair. Yuck. I was not able to sleep much, but now I am showered and at work (not actually doing work yet) and excited to go look through all my photos.</p>
+                <p>It was such a magical weekend. Sweet friends, delicious food, and so much beautiful European cityscape to take in. My heart was so full of joy, and I know this will be one of the weekends that I will look back on and treasure for a long time coming. Such a blessing! Thank you, Estonia.</p>
+            
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.list-group-item').click(function() {
+        var target = $(this).attr('href');
+        $('.card').removeClass('d-block').addClass('d-none');
+        $(target).removeClass('d-none').addClass('d-block');
+      });
+    });
+  </script>
+</body>
+</html>
