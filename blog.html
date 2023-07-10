@@ -7,7 +7,7 @@
     /* Custom Styles */
     body {
       font-family: Arial, sans-serif;
-      background-color: #cfe1b9;
+      background-color: #b5c99a;
       margin: 0;
       padding: 0;
     }
@@ -33,6 +33,29 @@
       background-color: #718355;
     }
 
+    .navbar {
+  background-color: #718355;
+  color: #e9f5db;
+  padding: 10px;
+}
+
+.navbar a {
+  color: #e9f5db;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+}
+
+
 
 
     @keyframes gradientAnimation {
@@ -48,22 +71,24 @@
     }
   </style>
 </head>
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#home">
+        <strong>Lauren Adams</strong>
+        <link rel="icon" href="greenlogo.png" type="image/png">
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#home">Home</a>
+        <a class="navbar-item" href="#work-experience">Work Experience</a>
+        <a class="navbar-item" href="#about-me">About Me</a>
+        <a class="navbar-item" href="portfolio.html">Portfolio</a>
+      </div>
+    </div>
+  </nav>
 <body>
-    <header class="l-header">
-        <nav class="nav bd-grid">
-            <div>
-                <a href="index.html" class="nav__logo">
-                    <img src="greenlogo.png" width="50px" height="50px" alt="Logo" class="logo-image">
-                  </a>
-                  
-            </div>
-
-        
-            <div class="nav__toggle" id="nav-toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
-            </div>
-        </nav>
-    </header>
+    
   <div class="container">
     <header class="mt-4 mb-4">
       <h1 class="text-center">Welcome to My Blog</h1>
@@ -156,7 +181,7 @@
         <div class="card d-none" id="article2">
           <div class="card-body">
             <h2 class="card-title custom-green">Disney, Please Stop</h2>
-            <p class="card-text">The Disney Channel franchise has held tight to the hearts of children and families for the past 100 years. With a lineup of iconic princess stories, world-class theme parks, and animation that paved the way to modern cinema, they continued to buy up any franchise that could threaten their empire, including Pixar, Marvel, Star Wars, and even National Geographic. With all of this going for them, why have they consistently disappointed fans?</p>
+            <p class="card-text">The Disney franchise has held tight to the hearts of children and families for the past 100 years. They boast a lineup of iconic princess stories, world-class theme parks, and animation that paved the way to modern cinema. Plus they continued to buy up any franchise that could threaten their empire, including Pixar, Marvel, Star Wars, and even National Geographic. With all of this going for them, why have they consistently disappointed fans?</p>
 
             <p>I believe the heart of this problem is the live-action remake. They provide a safe opportunity for studios to re-release a character for the younger generation and provide an easy cash grab. But they don't add anything. Maleficent was a great film that was cool and told a new story from an existing framework. But Cinderella, Belle, Aladdin, and Mulan all proved to be forgettable and controversial films.</p>
             
@@ -164,7 +189,7 @@
             
             <p>Also, we need to address the political controversy of finding live-action actors to replace beloved animated characters. No live-action casting has been without controversy, from Ariel to even Nani for the live-action Lilo and Stitch. It appears no actor can make the public happy. It is either an actor that is not the correct ethnicity or is the correct ethnicity but does not look like the character or is swapping the race of a character in a way that does not add anything to the plot. All of this controversy just feels frustrating and toxic for the poor actors who are put in these environments. These actors don't need to have to live up to an unreasonable fanbase when Disney could just create new content.</p>
             
-            <p>Don't randomly race-swap a character; write authentic and diverse stories that fit that character. New films like Encanto, Coco, and The Wish show that Disney can captivate audiences with beautiful and diverse new stories rather than just regurgitating already beloved stories.</p>
+            <p>There is no need to recreate exsisting films if the goal is to incoorperate more diversity; write authentic and diverse stories that fit new characters. New films like Encanto, Coco, and The Wish show that Disney can captivate audiences with beautiful and diverse new stories rather than just regurgitating already beloved stories.</p>
             
             <p>Yes, it is more of a gamble to release original stories, and they might bomb, but Disney has a ton of money that could be funneled into new films and animation rather than remakes. And there are so many wonderful fairy tales and folktales that could be turned into wonderful films that could captivate the next generations. Films like Frozen, Moana, Inside Out, and Zootopia were all loved because they were different and wonderful. There might be some bombs like Strange World or Turning Red, but at least they tried. It is better to try and fail than not try at all. Anyway, that is my brain dump. Be better, Disney. Thanks!</p>
             </div>

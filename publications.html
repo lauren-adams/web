@@ -5,22 +5,47 @@
     <title>Publications</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styleArt.css">
+    <style>
+    .navbar {
+        background-color: #718355;
+        color: #e9f5db;
+        padding: 10px;
+      }
+      
+      .navbar a {
+        color: #e9f5db;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+      
+      @media screen and (max-width: 767px) {
+        .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 9999;
+        }
+      }
+      
+          </style>
 </head>
-<header class="l-header">
-    <nav class="nav bd-grid">
-        <div>
-            <a href="index.html" class="nav__logo">
-                <img src="greenlogo.png" width="50px" height="50px" alt="Logo" class="logo-image">
-              </a>
-              
-        </div>
-
-    
-        <div class="nav__toggle" id="nav-toggle">
-                <ion-icon name="menu-outline"></ion-icon>
-        </div>
-    </nav>
-</header>
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#home">
+        <strong>Lauren Adams</strong>
+        <link rel="icon" href="greenlogo.png" type="image/png">
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#home">Home</a>
+        <a class="navbar-item" href="#work-experience">Work Experience</a>
+        <a class="navbar-item" href="#about-me">About Me</a>
+        <a class="navbar-item" href="portfolio.html">Portfolio</a>
+      </div>
+    </div>
+  </nav>
 <body>
     
     <div class="container mt-5">

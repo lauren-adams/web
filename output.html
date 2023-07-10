@@ -1,5 +1,6 @@
 <html>
 <head>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             background-color:#e9f5db;
@@ -8,17 +9,16 @@
         }
         
         .card {
-    border: 1px solid #cfe1b9;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #cfe1b9;
-    width: 80%;
-    max-width: 800px; /* Set a maximum width to prevent the card from becoming too wide */
-    margin-left: auto;
-    margin-right: auto;
-}
-
+            border: 1px solid #cfe1b9;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #cfe1b9;
+            width: 80%;
+            max-width: 800px; /* Set a maximum width to prevent the card from becoming too wide */
+            margin-left: auto;
+            margin-right: auto;
+        }
         
         .card h3 {
             background-color: 718355;
@@ -31,30 +31,57 @@
         .card p {
             color: #718355;
         }
+
+        .navbar {
+            background-color: #718355;
+            color: #e9f5db;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between; /* Align the elements on the left and right */
+            align-items: center; /* Center vertically */
+        }
+
+        .navbar a {
+            color: #e9f5db;
+            text-decoration: none;
+            margin-left: 10px; /* Adjust the margin */
+        }
+
+        @media screen and (max-width: 767px) {
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 9999;
+            }
+        }
     </style>
 </head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
     <div>
-    <header class="l-header">
-        <nav class="nav bd-grid">
-            <div>
-                <a href="index.html" class="nav__logo">
-                    <img src="greenlogo.png" width="50px" height="50px" alt="Logo" class="logo-image">
-                  </a>
-                  
+        <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#home">
+                    <strong>Lauren Adams</strong>
+                    <link rel="icon" href="greenlogo.png" type="image/png">
+                </a>
             </div>
-
-        
-            <div class="nav__toggle" id="nav-toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="#home">Home</a>
+                    <a class="navbar-item" href="#work-experience">Work Experience</a>
+                    <a class="navbar-item" href="#about-me">About Me</a>
+                    <a class="navbar-item" href="portfolio.html">Portfolio</a>
+                </div>
             </div>
         </nav>
-    </header>
-</div>
-
+    </div>
+    
     <h1 style="text-align: center; padding: 40px; background-color: #e9f5db ; color: #87986a;">My Book Reviews</h1>
+    
     
             
             <div class="card">
