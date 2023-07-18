@@ -236,12 +236,3 @@ canvas {
   margin-right: 10px;
 }
 
-@media screen and (max-width: 767px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-  }
-}
