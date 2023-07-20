@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>My Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <style>
     /* Custom Styles */
@@ -18,19 +19,6 @@
     
     .article-card:hover {
       cursor: pointer;
-    }
-    
-    /* Dummy Articles */
-    .article-card:nth-child(3n+1) {
-      background-color: #97a97c;
-    }
-    
-    .article-card:nth-child(3n+2) {
-      background-color: #87986a;
-    }
-    
-    .article-card:nth-child(3n) {
-      background-color: #718355;
     }
 
     .navbar {
@@ -87,7 +75,7 @@
       </div>
     </div>
   </nav>
-<body>
+<body onload="showFirstArticle()">
     
   <div class="container">
     <header class="mt-4 mb-4">
@@ -97,6 +85,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="list-group" id="article-list">
+          <a href="#article0" class="list-group-item list-group-item-action custom-multi-color">Hello</a>
           <a href="#article1" class="list-group-item list-group-item-action custom-multi-color">Stealing the Show</a>
           <a href="#article2" class="list-group-item list-group-item-action custom-multi-color">Disney, Please Stop</a>
           <a href="#article3" class="list-group-item list-group-item-action custom-multi-color">Estonia Adventures</a>
@@ -108,7 +97,24 @@
         </div>
       </div>
       
-      <div class="col-lg-8">
+
+
+
+      <div class="col-lg-8"> 
+          <div class="card d-none" id="article0">
+            <div class="card-body">
+              <h2 class="card-title custom-green">Hello</h2>
+              <p class="card-text">
+                Hi friends! I get bored and like writing down my thoughts, so I made a little blog page. Mostly just random thoughts and some of travel records, I hope you like this little peek inside my brain :)
+              </p>
+              <div class="image-container" style="position: relative;">
+                <img src="frog.jpg" alt="Hello">
+              </div>
+            </div>
+          </div>
+
+
+
         <div class="card d-none" id="article1">
           <div class="card-body">
             <h2 class="card-title custom-green">Stealing the Show: Movie Rankings by Heistyness</h2>
@@ -406,6 +412,13 @@
         $(target).removeClass('d-none').addClass('d-block');
       });
     });
+
+    // JavaScript function to show the first article card by removing the "d-none" class
+    function showFirstArticle() {
+      const firstArticle = document.getElementById('article0');
+      firstArticle.classList.remove('d-none');
+    }
+  
   </script>
 </body>
 </html>
